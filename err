@@ -1,0 +1,7 @@
+postman script to check negative cases for API
+
+pm.test("Checking Error message", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.error).to.eql("Invalid API Key");
+    pm.expect(jsonData.statusCode).to.eql(401);
+});
